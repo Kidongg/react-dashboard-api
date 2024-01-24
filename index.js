@@ -265,7 +265,7 @@ app.get("/api/users/:id", (req, res) => {
 
 // ADD USER
 app.post("/api/users", (req, res) => {
-  users.unshift(req.body)
+  users.unshift(req.body);
   res.json(users);
 });
 
@@ -282,19 +282,23 @@ app.get("/api/products", (req, res) => {
 
 // GET PRODUCT
 app.get("/api/products/:id", (req, res) => {
-  const product = products.find((product) => product.id === parseInt(req.params.id));
+  const product = products.find(
+    (product) => product.id === parseInt(req.params.id)
+  );
   res.json(product);
 });
 
 // ADD PRODUCT
 app.post("/api/products", (req, res) => {
-  products.unshift(req.body)
+  products.unshift(req.body);
   res.json(products);
 });
 
 // DELETE PRODUCT
 app.delete("/api/products/:id", (req, res) => {
-  products = products.filter((product) => product.id !== parseInt(req.params.id));
+  products = products.filter(
+    (product) => product.id !== parseInt(req.params.id)
+  );
   res.json("Product deleted!");
 });
 
